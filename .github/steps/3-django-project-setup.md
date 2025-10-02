@@ -1,12 +1,12 @@
 ## Etapa 3: Inicializar e criar o banco de dados MongoDB octofit_db, projeto/app Django, atualizar arquivos do projeto/app Django e popular o banco de dados MongoDB
 
-In this step, we will accomplish the following:
+Nesta etapa, realizaremos o seguinte:
 
-- Set up the octofit_db MongoDB database structure.
-- Update the octofit-tracker/backend/octofit_tracker app files:
-  - settings, models, serializers, urls, views, tests, and admin files.
-- Populate the octofit_db database with test data.
-- Verify the test data is populated in the octofit_db database.
+- Configurar a estrutura do banco de dados MongoDB octofit_db.
+- Atualizar os arquivos da app octofit-tracker/backend/octofit_tracker:
+  - arquivos settings, models, serializers, urls, views, tests e admin.
+- Popular o banco de dados octofit_db com dados de teste.
+- Verificar se os dados de teste foram populados no banco de dados octofit_db.
 
 Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
@@ -18,15 +18,15 @@ Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agen
 
 **Abra uma nova sessão do Copilot Chat clicando no ícone de mais `+` no painel do Copilot Chat.**
 
-### :keyboard: Activity: Setup the Python Django project/app
+### :keyboard: Atividade: Configurar o projeto/app Python Django
 
-In this activity we will leverage a feature in VS Code called prompt files. A prompt file that has been created by the IT department for us to create our Django project application. Copy/paste the following prompt in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Nesta atividade aproveitaremos um recurso no VS Code chamado arquivos de prompt. Um arquivo de prompt que foi criado pelo departamento de TI para nós criarmos nossa aplicação do projeto Django. Copie/cole o seguinte prompt no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
-What are prompt files?
+O que são arquivos de prompt?
 
-Prompt files let you define reusable prompts for common and repeatable development tasks in a Markdown file.
-Prompt files are standalone prompts that you can run directly in chat. You can include task-specific context and guidelines about how the task should be performed.
-Combine prompt files with custom instructions to ensure consistent execution of complex tasks.
+Arquivos de prompt permitem que você defina prompts reusáveis para tarefas de desenvolvimento comuns e repetíveis em um arquivo Markdown.
+Arquivos de prompt são prompts independentes que você pode executar diretamente no chat. Você pode incluir contexto específico da tarefa e diretrizes sobre como a tarefa deve ser realizada.
+Combine arquivos de prompt com instruções personalizadas para garantir execução consistente de tarefas complexas.
 
 See the [VS Code Docs: Prompt Files](https://code.visualstudio.com/docs/copilot/customization/overview#_prompt-files) page for more information.
 
@@ -37,17 +37,17 @@ See the [VS Code Docs: Prompt Files](https://code.visualstudio.com/docs/copilot/
 >```
 
 > [!NOTE]
-> - Wait a moment for the Copilot to respond and press the `Continue` button to execute each command presented by Copilot agent mode.
-> - Keep files created and updated until the Copilot agent mode has finished.
+> - Aguarde um momento para o Copilot responder e pressione o botão `Continue` para executar cada comando apresentado pelo modo agent do Copilot.
+> - Mantenha os arquivos criados e atualizados até que o modo agent do Copilot termine.
 
 > [!IMPORTANT]
-> - Don't start the Python Django app in the way that GitHub Copilot agent mode suggests hit **cancel** when you see this image.
+> - Não inicie a app Python Django da maneira que o modo agent do GitHub Copilot sugere, clique **cancel** quando você ver esta imagem.
 
 <img src="https://github.com/user-attachments/assets/02a875c1-19a4-417b-ab03-aefbbe2186d4" width=50% height=50%>
 
-### :keyboard: Activity: Initialize, create, and populate the octofit_db MongoDB database
+### :keyboard: Atividade: Inicializar, criar e popular o banco de dados MongoDB octofit_db
 
-Let's continue to leverage a prompt file that has been created by the IT department for us to initialize and create the octofit_db MongoDB database. Copy/paste the following prompt in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Vamos continuar aproveitando um arquivo de prompt que foi criado pelo departamento de TI para nós inicializarmos e criarmos o banco de dados MongoDB octofit_db. Copie/cole o seguinte prompt no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
@@ -56,34 +56,34 @@ Let's continue to leverage a prompt file that has been created by the IT departm
 > /init-populate-octofit_db
 > ```
 
-### :keyboard: Activity: Let's create a prompt file that will update the Python Django project/app files
+### :keyboard: Atividade: Vamos criar um arquivo de prompt que atualizará os arquivos do projeto/app Python Django
 
-Now let's create a prompt file of our own that we can share with other staff to develop to build the octofit-tracker app. Copy/paste the following prompt in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Agora vamos criar um arquivo de prompt nosso que podemos compartilhar com outros funcionários para desenvolver e construir a app octofit-tracker. Copie/cole o seguinte prompt no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's add the following to a prompt file called `update-octofit-tracker-app.prompt.md` in the `.github/prompts` directory and add mode: 'agent' and model: GPT-4.1 to the prompt file.
+> Vamos adicionar o seguinte a um arquivo de prompt chamado `update-octofit-tracker-app.prompt.md` no diretório `.github/prompts` e adicionar mode: 'agent' e model: GPT-4.1 ao arquivo de prompt.
 >
-> # Django App Updates
+> # Atualizações da App Django
 >
-> - All Django project files are in the `octofit-tracker/backend/octofit_tracker` directory.
+> - Todos os arquivos do projeto Django estão no diretório `octofit-tracker/backend/octofit_tracker`.
 >
-> 1. Update `settings.py` for MongoDB connection and CORS.
-> 2. Update `models.py`, `serializers.py`, `urls.py`, `views.py`, `tests.py`, and `admin.py` to support users, teams, activities, leaderboard, and workouts collections.
-> 3. Ensure `/` points to the api and `api_root` is present in `urls.py`.
+> 1. Atualize `settings.py` para conexão MongoDB e CORS.
+> 2. Atualize `models.py`, `serializers.py`, `urls.py`, `views.py`, `tests.py` e `admin.py` para suportar coleções de usuários, equipes, atividades, placar de líderes e treinos.
+> 3. Certifique-se de que `/` aponta para a api e `api_root` está presente em `urls.py`.
 > ```
 
 > [!TIP]
-> Use prompt files to define repeatable tasks and workflows.
+> Use arquivos de prompt para definir tarefas e fluxos de trabalho repetíveis.
 >
-> When writing prompts focus on **WHAT** needs to be done. You can reference instructions for the **HOW**.
+> Ao escrever prompts, foque no **QUE** precisa ser feito. Você pode referenciar instruções para o **COMO**.
 
 See the [VS Code Docs: Prompt Files](https://code.visualstudio.com/docs/copilot/customization/overview#_prompt-files) page for more information.
 
-### :keyboard: Activity: Let's use the prompt file to update the Python Django project/app files
+### :keyboard: Atividade: Vamos usar o arquivo de prompt para atualizar os arquivos do projeto/app Python Django
 
-Copy/paste the following prompt in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Copie/cole o seguinte prompt no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
@@ -93,24 +93,24 @@ Copy/paste the following prompt in the GitHub Copilot Chat and select the "Agent
 >
 
 > [!IMPORTANT]
-> - Don't start the Python Django app in the way that GitHub Copilot agent mode suggests hit **cancel** when you see this image.
+> - Não inicie a app Python Django da maneira que o modo agent do GitHub Copilot sugere, clique **cancel** quando você ver esta imagem.
 
 <img src="https://github.com/user-attachments/assets/02a875c1-19a4-417b-ab03-aefbbe2186d4" width=50% height=50%>
 
-1. Now that we have created the database structure, updated our Django project files, and populated the database, let's check our changes into our `build-octofit-app` branch.
+1. Agora que criamos a estrutura do banco de dados, atualizamos nossos arquivos do projeto Django e populamos o banco de dados, vamos verificar nossas mudanças na nossa branch `build-octofit-app`.
 
-1. With our new changes complete, please **commit** and **push** the changes to GitHub.
+1. Com nossas novas mudanças completas, por favor **commit** e **push** as mudanças para o GitHub.
 
-1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson so we can keep working!
+1. Aguarde um momento para Mona verificar seu trabalho, fornecer feedback e compartilhar a próxima lição para que possamos continuar trabalhando!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+Se você não receber feedback, aqui estão algumas coisas para verificar:
 
-- Make sure your commit changes were made for the following files to the branch `build-octofit-app` and pushed/synchronized to GitHub:
+- Certifique-se de que suas mudanças de commit foram feitas para os seguintes arquivos na branch `build-octofit-app` e enviadas/sincronizadas para o GitHub:
   - `octofit-tracker/backend/octofit_tracker/settings.py`
   - `octofit-tracker/backend/octofit_tracker/management/commands/populate_db.py`
-- If Mona found a mistake, simply make a correction and push your changes again. Mona will check your work as many times as needed.
+- Se Mona encontrou um erro, simplesmente faça uma correção e envie suas mudanças novamente. Mona verificará seu trabalho quantas vezes for necessário.
 
 </details>

@@ -1,77 +1,77 @@
 ## Etapa 4: Configurar Django REST Framework, iniciar o servidor e testar a API
 
-In this step, we will accomplish the following:
+Nesta etapa, realizaremos o seguinte:
 
-- Setup the Django REST Framework.
-- Start the server.
-- Test the API using curl.
+- Configurar o Django REST Framework.
+- Iniciar o servidor.
+- Testar a API usando curl.
 
 Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > [!TIP]
-> - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.
-> - Wait a moment for the Copilot to respond and press the continue button to execute commands presented by Copilot agent mode.
-> - Keep files created and updated by Copilot agent mode until it is finished.
-> - Agent mode has the ability to evaluate your code base and execute commands and add/refactor/delete parts of your code base and automatically self heal if it or you makes a mistake in the process.
+> - Tenha em mente que o modo agent do Copilot é conversacional, então ele pode fazer perguntas para você e você pode fazer perguntas para ele também.
+> - Aguarde um momento para o Copilot responder e pressione o botão continue para executar comandos apresentados pelo modo agent do Copilot.
+> - Mantenha os arquivos criados e atualizados pelo modo agent do Copilot até que ele termine.
+> - O modo agent tem a habilidade de avaliar sua base de código e executar comandos e adicionar/refatorar/deletar partes da sua base de código e se auto-curar automaticamente se ele ou você comete um erro no processo.
 
-**Open up a new Copilot Chat session by hitting the plus `+` icon in the Copilot Chat pane.**
+**Abra uma nova sessão do Copilot Chat clicando no ícone de mais `+` no painel do Copilot Chat.**
 
-### :keyboard: Activity: Setup Django REST Framework and test the REST API endpoints
+### :keyboard: Atividade: Configurar Django REST Framework e testar os endpoints da REST API
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's setup codespace for the URL, start the server via VS Code launch.json, and test the API.
+> Vamos configurar o codespace para a URL, iniciar o servidor via VS Code launch.json e testar a API.
 > 
-> - All Django project files are in the `octofit-tracker/backend/octofit_tracker` directory.
-> - Only update urls in `settings.py` and `urls.py`
-> - REST api endpoint format https://$CODESPACE_NAME-8000.app.github.dev/api/[component]/
-> - example full url: https://$CODESPACE_NAME-8000.app.github.dev/api/activities/
-> - Do not hard code the `$CODESPACE_NAME` value use the variable
-> - Do not update the `views.py`
+> - Todos os arquivos do projeto Django estão no diretório `octofit-tracker/backend/octofit_tracker`.
+> - Apenas atualize urls em `settings.py` e `urls.py`
+> - Formato do endpoint da REST api https://$CODESPACE_NAME-8000.app.github.dev/api/[component]/
+> - exemplo de url completa: https://$CODESPACE_NAME-8000.app.github.dev/api/activities/
+> - Não codifique diretamente o valor `$CODESPACE_NAME`, use a variável
+> - Não atualize o `views.py`
 >
-> 1. Update `urls.py` to replace the return for the REST API URL endpoints with the environment variable $CODESPACE_NAME https://$CODESPACE_NAME-8000.app.github.dev for Django and avoid certificate HTTPS issues.
-> 2. Make sure the Django backend works on your codespace URL and localhost (i.e., the value of `$CODESPACE_NAME`) by updating `ALLOWED_HOSTS` in `settings.py`.
-> 3. Test the API endpoints using curl command.
+> 1. Atualize `urls.py` para substituir o retorno dos endpoints da URL da REST API com a variável de ambiente $CODESPACE_NAME https://$CODESPACE_NAME-8000.app.github.dev para Django e evitar problemas de certificado HTTPS.
+> 2. Certifique-se de que o backend Django funcione na sua URL do codespace e localhost (ou seja, o valor de `$CODESPACE_NAME`) atualizando `ALLOWED_HOSTS` em `settings.py`.
+> 3. Teste os endpoints da API usando comando curl.
 >```
 
 > [!IMPORTANT]
-> Don't start the Python Django app in the way that GitHub Copilot agent mode suggests hit
-> **cancel**. Follow the next activity instead.
+> Não inicie a app Python Django da maneira que o modo agent do GitHub Copilot sugere, clique
+> **cancel**. Siga a próxima atividade em vez disso.
 
-### :keyboard: Activity: Start the Python Django app and check the output
+### :keyboard: Atividade: Iniciar a app Python Django e verificar a saída
 
-Now, let's actually try running the Django application! In the left sidebar, select the `Run and Debug` tab and then press the **Start Debugging** icon.
+Agora, vamos tentar executar a aplicação Django! Na barra lateral esquerda, selecione a aba `Run and Debug` e então pressione o ícone **Start Debugging**.
 
 <img alt="Run Django" src="https://github.com/user-attachments/assets/a6c32898-bbeb-41ed-a8c5-488c8a42d507" width=30% height=30%>
 
-Go to the running Django REST api url that pops up for port 8000 that looks like the following:
+Vá para a URL da API REST Django em execução que aparece para a porta 8000, que se parece com o seguinte:
 
 <img alt="django-rest-api-port" src="https://github.com/user-attachments/assets/627f3cbe-96ae-4a30-b38b-acd3cecf96ee" width=30% height=30%>
 
-Once you open it in your web browser you will get a warning like the following:
+Quando você abrir no seu navegador da web, você receberá um aviso como o seguinte:
 
 <img alt="django-rest-api" src="https://github.com/user-attachments/assets/cb52d137-e78d-440b-8e9c-c322d7c49b48" width=30% height=30%>
 
-Once you click `Continue` it should look similar the following with your codespace name:
+Quando você clicar em `Continue`, deve parecer semelhante ao seguinte com o nome do seu codespace:
 
 <img alt="django-rest-api" src="https://github.com/user-attachments/assets/45ac98ba-aa7b-4953-81d6-e38bba97ae35" width=50% height=50%>
 
-1. Now that we have updated our Django product to include our codespace name for the URL endpoint,
-   let's check our changes in to our `build-octofit-app` branch.
+1. Agora que atualizamos nosso produto Django para incluir o nome do nosso codespace para o endpoint da URL,
+   vamos fazer check-in das nossas mudanças no branch `build-octofit-app`.
 
-1. With our new changes complete, please **commit** and **push** the changes to the `build-octofit-app` branch.
+1. Com nossas novas mudanças completas, por favor **commit** e **push** as mudanças para o branch `build-octofit-app`.
 
-1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson so we can keep working!
+1. Aguarde um momento para Mona verificar seu trabalho, fornecer feedback e compartilhar a próxima lição para que possamos continuar trabalhando!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+Se você não recebeu feedback, aqui estão algumas coisas para verificar:
 
-- Make sure your commit changes were made for the following files to the branch `build-octofit-app` and pushed/synchronized to GitHub:
+- Certifique-se de que suas mudanças de commit foram feitas para os seguintes arquivos no branch `build-octofit-app` e enviadas/sincronizadas para o GitHub:
   - `octofit-tracker/backend/octofit_tracker/settings.py`
   - `octofit-tracker/backend/octofit_tracker/views.py`
-- If Mona found a mistake, simply make a correction and push your changes again. Mona will check your work as many times as needed.
+- Se Mona encontrou um erro, simplesmente faça uma correção e envie suas mudanças novamente. Mona vai verificar seu trabalho quantas vezes for necessário.
 
 </details>

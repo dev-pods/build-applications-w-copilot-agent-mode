@@ -1,9 +1,9 @@
 ## Etapa 5: Configurar o framework React do frontend, atualizar os componentes e iniciar a app OctoFit Tracker
 
-In this step, we will accomplish the following:
+Nesta etapa, realizaremos o seguinte:
 
-- Setup the octofit-tracker frontend React framework.
-- Update the following components to include the React framework:
+- Configurar o framework React do frontend octofit-tracker.
+- Atualizar os seguintes componentes para incluir o framework React:
   - src/App.js
   - src/index.js
   - src/components/Activities.js
@@ -11,41 +11,41 @@ In this step, we will accomplish the following:
   - src/components/Teams.js
   - src/components/Users.js
   - src/components/Workouts.js
-- Start the React app and check the output.
+- Iniciar o app React e verificar a saída.
 
-Copy and paste the following prompt(s) in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > [!NOTE]
-> - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.
-> - Wait a moment for the Copilot to respond and press the continue button to execute commands presented by Copilot agent mode.
-> - Keep files created and updated by Copilot agent mode until it is finished.
-> - Agent mode has the ability to evaluate your code base and execute commands and add/refactor/delete parts of your code base and automatically self heal if it or you makes a mistake in the process.
+> - Tenha em mente que o modo agent do Copilot é conversacional, então ele pode fazer perguntas para você e você pode fazer perguntas para ele também.
+> - Aguarde um momento para o Copilot responder e pressione o botão continue para executar comandos apresentados pelo modo agent do Copilot.
+> - Mantenha os arquivos criados e atualizados pelo modo agent do Copilot até que ele termine.
+> - O modo agent tem a habilidade de avaliar sua base de código e executar comandos e adicionar/refatorar/deletar partes da sua base de código e se auto-curar automaticamente se ele ou você comete um erro no processo.
 
-**Open up a new Copilot Chat session by hitting the plus `+` icon in the Copilot Chat pane.**
+**Abra uma nova sessão do Copilot Chat clicando no ícone de mais `+` no painel do Copilot Chat.**
 
-### :keyboard: Activity: Install the octofit-tracker frontend React framework
+### :keyboard: Atividade: Instalar o framework React do frontend octofit-tracker
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's setup the octofit-tracker frontend React  framework and
-> ensure everything is created in the `octofit-tracker/frontend` directory by using `--prefix`
+> Vamos configurar o framework React do frontend octofit-tracker e
+> garantir que tudo seja criado no diretório `octofit-tracker/frontend` usando `--prefix`
 >
-> 1. Make sure the the octofit-tracker/frontend directory exists.
-> 2. create the react app
-> 3. Install react, bootstrap, and react-router-dom
-> 4. Import bootstrap css in the src/index.js file.
-> 5. Don't change .gitignore file
+> 1. Certifique-se de que o diretório octofit-tracker/frontend existe.
+> 2. crie o app react
+> 3. Instale react, bootstrap e react-router-dom
+> 4. Importe o CSS do bootstrap no arquivo src/index.js.
+> 5. Não altere o arquivo .gitignore
 >```
 
-### :keyboard: Activity: Update the octofit-tracker frontend React components
+### :keyboard: Atividade: Atualizar os componentes React do frontend octofit-tracker
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's update the octofit-tracker frontend React components.
+> Vamos atualizar os componentes React do frontend octofit-tracker.
 >
-> - Update the following components to include the React framework to point to the backend REST API:
+> - Atualize os seguintes componentes para incluir o framework React para apontar para a REST API do backend:
 >   - src/App.js
 >   - src/index.js
 >   - src/components/Activities.js
@@ -53,97 +53,97 @@ Copy and paste the following prompt(s) in the GitHub Copilot Chat and select the
 >   - src/components/Teams.js
 >   - src/components/Users.js
 >   - src/components/Workouts.js
-> - In each component replace the fetch url with the codespace url
+> - Em cada componente, substitua a URL de fetch pela URL do codespace
 >   https://$REACT_APP_CODESPACE_NAME-8000.app.github.dev/api/[component]/
->   for the Django rest framework backend.
->   make sure all components are pulling data from the REST api endpoint
->   for display in the REACT frontend
-> - Make sure to use the correct port and protocol http or https.
-> - Update src/App.js to include the main navigation for all components.
-> - Make sure react-router-dom is used for the navigation menu.
-> - The react app should show the navigation menu and the components.
-> - Update all components to log the fetched data and make them compatible with both paginated (.results) and plain array responses.
-> - Add console.log statements to each component to log the fetched data and the REST API endpoints.
+>   para o backend do framework Django rest.
+>   certifique-se de que todos os componentes estão obtendo dados do endpoint da REST API
+>   para exibição no frontend REACT
+> - Certifique-se de usar a porta e protocolo corretos http ou https.
+> - Atualize src/App.js para incluir a navegação principal para todos os componentes.
+> - Certifique-se de que react-router-dom seja usado para o menu de navegação.
+> - O app react deve mostrar o menu de navegação e os componentes.
+> - Atualize todos os componentes para registrar os dados obtidos e torná-los compatíveis com respostas paginadas (.results) e arrays simples.
+> - Adicione instruções console.log a cada componente para registrar os dados obtidos e os endpoints da REST API.
 > ```
 
-### :keyboard: Activity: Start the react app and check the output
+### :keyboard: Atividade: Iniciar o app react e verificar a saída
 
-Now, let's actually try running the react application! In the left sidebar, select the `Run and Debug` tab and then press the **Start Debugging** icon.
+Agora, vamos tentar executar a aplicação react! Na barra lateral esquerda, selecione a aba `Run and Debug` e então pressione o ícone **Start Debugging**.
 
 <img alt="Run React Frontend" src="https://github.com/user-attachments/assets/b76a8e82-8435-4cbd-9540-8143756d1c60"  width=30% height=30%>
 
-Go to the running React Frontend url that pops up for port 3000 that looks like the following:
+Vá para a URL do Frontend React em execução que aparece para a porta 3000, que se parece com o seguinte:
 
 <img alt="react-frontend-port" src="https://github.com/user-attachments/assets/a0c8b213-ee5f-46dd-8675-686a7ba0818f" width=30% height=30%>
 
-Once you open it in your web browser you will get a warning like the following:
+Quando você abrir no seu navegador da web, você receberá um aviso como o seguinte:
 
 <img alt="django-rest-api" src="https://github.com/user-attachments/assets/cb52d137-e78d-440b-8e9c-c322d7c49b48" width=30% height=30%>
 
-Once you click `Continue` it should look similar the following:
+Quando você clicar em `Continue`, deve parecer semelhante ao seguinte:
 
 <img alt="react-frontend-app" src="https://github.com/user-attachments/assets/f7f1a076-c259-49f6-8aa5-9ebcd5f0698d" width=50% height=50%>
 
-### :keyboard: Activity: Let's add some formatting, structuring, and styling to the octofit tracker app
+### :keyboard: Atividade: Vamos adicionar formatação, estruturação e estilo ao app octofit tracker
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's style this like App.css and make it look nice.
+> Vamos estilizar isso como App.css e fazer com que pareça bonito.
 >
-> - Let's make the App.js and all components javascript files in the app are consistent with the following:
->   - Use bootstrap tables for the data in all javascript components.
->   - Use bootstrap buttons for the buttons.
->   - Use bootstrap headings for the headings.
->   - Use bootstrap links for the links.
->   - Use bootstrap navigation for the navigation menu.
->   - Use bootstrap forms for the forms.
->   - Use bootstrap cards for the cards.
->   - Use bootstrap modals for the modals.
->   - Consistent table layouts for all components data.
+> - Vamos fazer o App.js e todos os arquivos javascript de componentes no app serem consistentes com o seguinte:
+>   - Use tabelas bootstrap para os dados em todos os componentes javascript.
+>   - Use botões bootstrap para os botões.
+>   - Use títulos bootstrap para os títulos.
+>   - Use links bootstrap para os links.
+>   - Use navegação bootstrap para o menu de navegação.
+>   - Use formulários bootstrap para os formulários.
+>   - Use cartões bootstrap para os cartões.
+>   - Use modais bootstrap para os modais.
+>   - Layouts de tabela consistentes para dados de todos os componentes.
 >```
 
-### :keyboard: Optional Activity: Let's make the octofit tracker app look nice, pretty, and add some color
+### :keyboard: Atividade Opcional: Vamos fazer o app octofit tracker parecer bonito, atraente e adicionar algumas cores
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
 >
 > ```prompt
-> Let's style this like App.css and make it look nice.
+> Vamos estilizar isso como App.css e fazer com que pareça bonito.
 > 
-> -  Edit the App.css file to do the following:
->   - Add some color to the background.
->   - Add some color to the text.
->   - Add some color to the tables.
->   - Add some color to the buttons.
->   - Add some color to the headings.
->   - Add some color to the links.
->   - Add some color to the navigation menu.
-> - Add the octofitapp-small logo justified to the left to the app and make it look nice.
-> - Add a favicon to the app and make it look nice.
+> -  Edite o arquivo App.css para fazer o seguinte:
+>   - Adicione algumas cores ao fundo.
+>   - Adicione algumas cores ao texto.
+>   - Adicione algumas cores às tabelas.
+>   - Adicione algumas cores aos botões.
+>   - Adicione algumas cores aos títulos.
+>   - Adicione algumas cores aos links.
+>   - Adicione algumas cores ao menu de navegação.
+> - Adicione o logo octofitapp-small justificado à esquerda no app e faça com que pareça bonito.
+> - Adicione um favicon ao app e faça com que pareça bonito.
 >```
 
-### :keyboard: Optional Activity: Iterate on the appearance and try different models
+### :keyboard: Atividade Opcional: Iterar na aparência e tentar modelos diferentes
 
 > [!TIP]
-> - Try creating your own prompts to change the application appearance, add features, and try different models.
+> - Tente criar seus próprios prompts para alterar a aparência da aplicação, adicionar recursos e tentar modelos diferentes.
 
-1. Now that we have created the React frontend for all application components, let's check our changes in to our `build-octofit-app` branch.
+1. Agora que criamos o frontend React para todos os componentes da aplicação, vamos fazer check-in das nossas mudanças no nosso branch `build-octofit-app`.
 
-1. With our new changes complete, please **commit** and **push** the changes to the `build-octofit-app` branch.
+1. Com nossas novas mudanças completas, por favor **commit** e **push** as mudanças para o branch `build-octofit-app`.
 
-1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson so we can keep working!
+1. Aguarde um momento para Mona verificar seu trabalho, fornecer feedback e compartilhar a próxima lição para que possamos continuar trabalhando!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+Se você não recebeu feedback, aqui estão algumas coisas para verificar:
 
-- Make sure your commit changes were made for the following files to the branch `build-octofit-app` and pushed/synchronized to GitHub:
-  - `octofit-tracker/frontend/src/components/Activities.js` and it contains `-8000.app.github.dev/api/activities/`
-  - `octofit-tracker/frontend/src/components/Leaderboard.js` and it contains `-8000.app.github.dev/api/leaderboard/`
-  - `octofit-tracker/frontend/src/components/Teams.js` and it contains `-8000.app.github.dev/api/teams/`
-  - `octofit-tracker/frontend/src/components/Users.js` and it contains `-8000.app.github.dev/api/users/`
-  - `octofit-tracker/frontend/src/components/Workouts.js` and it contains `-8000.app.github.dev/api/workouts/`
-- If Mona found a mistake, simply make a correction and push your changes again. Mona will check your work as many times as needed.
+- Certifique-se de que suas mudanças de commit foram feitas para os seguintes arquivos no branch `build-octofit-app` e enviadas/sincronizadas para o GitHub:
+  - `octofit-tracker/frontend/src/components/Activities.js` e contém `-8000.app.github.dev/api/activities/`
+  - `octofit-tracker/frontend/src/components/Leaderboard.js` e contém `-8000.app.github.dev/api/leaderboard/`
+  - `octofit-tracker/frontend/src/components/Teams.js` e contém `-8000.app.github.dev/api/teams/`
+  - `octofit-tracker/frontend/src/components/Users.js` e contém `-8000.app.github.dev/api/users/`
+  - `octofit-tracker/frontend/src/components/Workouts.js` e contém `-8000.app.github.dev/api/workouts/`
+- Se Mona encontrou um erro, simplesmente faça uma correção e envie suas mudanças novamente. Mona vai verificar seu trabalho quantas vezes for necessário.
 
 </details>
