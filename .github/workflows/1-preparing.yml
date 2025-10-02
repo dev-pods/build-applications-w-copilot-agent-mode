@@ -1,4 +1,4 @@
-name: Etapa 1 # Preparando para usar modo agent GHCP
+name: Step 1 # Preparando para usar modo agent GHCP
 
 on:
   push:

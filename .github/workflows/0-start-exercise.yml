@@ -1,4 +1,4 @@
-name: Etapa 0 # Iniciar Exercício construir-aplicacoes-com-modo-agent-GHCP
+name: Step 0 # Iniciar Exercício construir-aplicacoes-com-modo-agent-GHCP
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Etapa 2 # configuração inicial da aplicação octofit-tracker
+name: Step 2 # configuração inicial da aplicação octofit-tracker
 
 on:
   push:

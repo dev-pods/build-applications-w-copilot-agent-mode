@@ -1,4 +1,4 @@
-name: Etapa 3 # Configuração do projeto Django e população de dados de teste do banco
+name: Step 3 # Configuração do projeto Django e população de dados de teste do banco
 
 on:
   push:

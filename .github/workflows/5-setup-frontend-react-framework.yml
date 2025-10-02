@@ -1,4 +1,4 @@
-name: Etapa 5 # Configurar o frontend do framework REACT
+name: Step 5 # Configurar o frontend do framework REACT
 
 on:
   push:

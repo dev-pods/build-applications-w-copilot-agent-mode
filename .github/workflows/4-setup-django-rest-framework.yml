@@ -1,4 +1,4 @@
-name: Etapa 4 # Configurar o framework Django REST API
+name: Step 4 # Configurar o framework Django REST API
 
 on:
   push:
