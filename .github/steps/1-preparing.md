@@ -1,89 +1,89 @@
-## Step 1: Hello GitHub Copilot agent mode
+## Etapa 1: Olá modo agent do GitHub Copilot
 
-Welcome to your **"Build applications with GitHub Copilot agent mode"** exercise! :robot:
+Bem-vindo ao seu exercício **"Construa aplicações com o modo agent do GitHub Copilot"**! :robot:
 
-In this exercise, you will be using GitHub Copilot agent mode to build an application that tracks your fitness goals and progress. 🏋️‍♂️🏃‍♀️💪
+Neste exercício, você usará o modo agent do GitHub Copilot para construir uma aplicação que rastreia suas metas e progresso de fitness. 🏋️‍♂️🏃‍♀️💪
 
-### What is GitHub Copilot agent mode?
+### O que é o modo agent do GitHub Copilot?
 
-Copilot agent mode can create apps from scratch, refactor across multiple files, write and run tests, and migrate legacy code to modern frameworks. It can automatically generate documentation, integrate new libraries, or help answer questions about a complex codebase. Copilot agent mode helps you be super-productive by having an AI collaborator that understands the workspace. It can orchestrate your inner development flow while keeping you in control.
+O modo agent do Copilot pode criar aplicações do zero, refatorar em múltiplos arquivos, escrever e executar testes, e migrar código legado para frameworks modernos. Ele pode gerar documentação automaticamente, integrar novas bibliotecas, ou ajudar a responder questões sobre uma base de código complexa. O modo agent do Copilot ajuda você a ser super-produtivo tendo um colaborador de IA que entende o workspace. Ele pode orquestrar seu fluxo de desenvolvimento interno mantendo você no controle.
 
-Copilot agent mode operates in a more autonomous and dynamic manner to achieve the desired outcome. To process a request, Copilot loops over the following steps and iterates multiple times as needed:
+O modo agent do Copilot opera de forma mais autônoma e dinâmica para alcançar o resultado desejado. Para processar uma solicitação, o Copilot executa os seguintes passos em loop e itera múltiplas vezes conforme necessário:
 
-Determines the relevant context and files to edit autonomously.
-Offers both code changes and terminal commands to complete the task. For example, Copilot might compile code, install packages, run tests, and more.
-Monitors the correctness of code edits and terminal command output and iterates to remediate issues.
+Determina o contexto relevante e arquivos para editar de forma autônoma.
+Oferece tanto mudanças de código quanto comandos de terminal para completar a tarefa. Por exemplo, o Copilot pode compilar código, instalar pacotes, executar testes e muito mais.
+Monitora a correção das edições de código e saída dos comandos de terminal e itera para remediar problemas.
 
 > [!NOTE]
-> You can learn more about GitHub Copilot agent mode in the [Use agent mode documentation](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode).
+> Você pode aprender mais sobre o modo agent do GitHub Copilot na [documentação Use agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode).
 
-### :keyboard: Activity: Getting to know your GitHub Copilot agent mode development environment
+### :keyboard: Atividade: Conhecendo seu ambiente de desenvolvimento do modo agent do GitHub Copilot
 
-1. Right-click the below button to open the **Create Codespace** page in a new tab.
+1. Clique com o botão direito no botão abaixo para abrir a página **Create Codespace** em uma nova aba.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
 
-   - The free tier of Codespaces that comes with all GitHub accounts is fine, assuming you still have minutes available.
-   - The default Codespace settings are fine.
+   - O nível gratuito dos Codespaces que vem com todas as contas GitHub está bem, assumindo que você ainda tem minutos disponíveis.
+   - As configurações padrão do Codespace estão adequadas.
 
-1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
+1. Confirme que o campo **Repository** é sua cópia do exercício, não o original, então clique no botão verde **Create Codespace**.
 
-   - ✅ Your copy: `/{{full_repo_name}}`
+   - ✅ Sua cópia: `/{{full_repo_name}}`
    - ❌ Original: `/skills/build-applications-w-copilot-agent-mode`
 
-1. Wait a moment for Visual Studio Code to load.
+1. Aguarde um momento para o Visual Studio Code carregar.
 
-1. Before we continue let's take a moment to familiarize ourselves with the project folder.
+1. Antes de continuarmos, vamos dedicar um momento para nos familiarizar com a pasta do projeto.
 
-   - The left navigation bar is where you can access the file explorer, debugger, and search.
-   - The lower panel (Ctrl+J) shows the debugger output, allows running terminal commands, and allows configuring the web service ports.
-   - Our docs folder contains the another sample application repository that will give Copilot agent mode context to build your application. More on that in the next steps!
+   - A barra de navegação à esquerda é onde você pode acessar o explorador de arquivos, debugger e pesquisa.
+   - O painel inferior (Ctrl+J) mostra a saída do debugger, permite executar comandos de terminal e permite configurar as portas do serviço web.
+   - Nossa pasta docs contém outro repositório de aplicação de exemplo que dará contexto ao modo agent do Copilot para construir sua aplicação. Mais sobre isso nos próximos passos!
 
-1. At the top of VS Code, locate and click the Copilot icon to open a Copilot Chat panel.
+1. No topo do VS Code, localize e clique no ícone do Copilot para abrir um painel do Copilot Chat.
 
    <img width="150" alt="image" src="https://github.com/user-attachments/assets/5e64db46-95cb-415d-badc-b6b8677f10c1" />
 
-1. If this is your first time using GitHub Copilot, you will have to accept the usage terms to continue.
-    - Click the **Accept** button to continue.
+1. Se esta é sua primeira vez usando o GitHub Copilot, você terá que aceitar os termos de uso para continuar.
+    - Clique no botão **Accept** para continuar.
 
-### :keyboard: Activity: Use Copilot agent mode to create a branch and publish it. 🙋
+### :keyboard: Atividade: Use o modo agent do Copilot para criar uma branch e publicá-la. 🙋
 
-Great work! Let's ask copilot for help starting a branch so we can do some customizing.
+Ótimo trabalho! Vamos pedir ajuda ao copilot para iniciar uma branch para que possamos fazer algumas personalizações.
 
 > [!NOTE]
-> - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.
-> - Wait a moment for the Copilot to respond and press the **Continue** button to execute commands presented by Copilot agent mode.
+> - Tenha em mente que o modo agent do Copilot é conversacional, então ele pode fazer perguntas para você e você pode fazer perguntas para ele também.
+> - Aguarde um momento para o Copilot responder e pressione o botão **Continue** para executar comandos apresentados pelo modo agent do Copilot.
 
-1. If not already there, return to VS Code.
-1. Open the GitHub Copilot Chat window if not already open.
-1. Copy and paste the following prompt in the GitHub Copilot Chat and select the **Agent** instead of **Ask** or **Edit** from the drop down where you are inserting the prompt.
+1. Se não estiver lá, retorne ao VS Code.
+1. Abra a janela do GitHub Copilot Chat se não estiver aberta.
+1. Copie e cole o seguinte prompt no GitHub Copilot Chat e selecione **Agent** ao invés de **Ask** ou **Edit** no menu suspenso onde você está inserindo o prompt.
 
    <img src="https://github.com/user-attachments/assets/b9e291be-d835-4de0-ac1c-35a6ec3ea72d" width=30% height=30%>
 
-1. Let's ask Copilot agent mode to help us remember the command and create the branch `build-octofit-app` and publishing it
+1. Vamos pedir ao modo agent do Copilot para nos ajudar a lembrar do comando e criar a branch `build-octofit-app` e publicá-la
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=flat-square&logo=github%20copilot&labelColor=512a97&color=ecd8ff)
    >
    > ```prompt
-   > Please create and publish a new Git branch called build-octofit-app
+   > Por favor, crie e publique uma nova branch do Git chamada build-octofit-app
    > ```
 
-   Copilot agent mode will respond and prompt you to **continue** to execute the command.<br/>
+   O modo agent do Copilot responderá e pedirá para você **continuar** para executar o comando.<br/>
 
    <img src=https://github.com/user-attachments/assets/d1652fc1-78e5-49c6-9303-b455815eea8f width=40% height=40%>
 
-1. Now that we are happy with the command, press the `Continue` button to let Copilot agent mode run it for us. No need to copy and paste!
+1. Agora que estamos satisfeitos com o comando, pressione o botão `Continue` para deixar o modo agent do Copilot executá-lo para nós. Não precisa copiar e colar!
 
-1. After a moment, look in the VS Code lower status bar, on the left, to see the active branch. It should now say `build-octofit-app`. If so, you are all done with this step!
+1. Após um momento, olhe na barra de status inferior do VS Code, à esquerda, para ver a branch ativa. Agora deve dizer `build-octofit-app`. Se sim, você terminou esta etapa!
 
-1. Now that your branch is pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
+1. Agora que sua branch foi enviada para o GitHub, Mona já deve estar ocupada verificando seu trabalho. Dê um momento para ela e fique de olho nos comentários. Você verá ela responder com informações de progresso e a próxima lição.
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+Se você não receber feedback, aqui estão algumas coisas para verificar:
 
-- Make sure your created the branch with the exact name `build-octofit-app`. No prefixes or suffixes.
-- Make sure the branch was indeed published to your repository.
+- Certifique-se de que criou a branch com o nome exato `build-octofit-app`. Sem prefixos ou sufixos.
+- Certifique-se de que a branch foi realmente publicada no seu repositório.
 
 </details>

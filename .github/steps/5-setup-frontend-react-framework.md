@@ -1,4 +1,4 @@
-## Step 5: Setup the frontend React framework, update the components, and start OctoFit Tracker app
+## Etapa 5: Configurar o framework React do frontend, atualizar os componentes e iniciar a app OctoFit Tracker
 
 In this step, we will accomplish the following:
 

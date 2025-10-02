@@ -1,16 +1,16 @@
 ---
 mode: 'agent'
 model: GPT-4.1
-description: 'Create a Django project, start it, and run it'
+description: 'Criar um projeto Django, inicializá-lo e executá-lo'
 ---
 
-Your task is to create the Django project in octofit-tracker/backend/octofit_tracker directory using the Python
-virtual environment we already created in directory octofit-tracker/backend/venv which contains all the prerequisites.
+Sua tarefa é criar o projeto Django no diretório octofit-tracker/backend/octofit_tracker usando o
+ambiente virtual Python que já criamos no diretório octofit-tracker/backend/venv que contém todos os pré-requisitos.
 
 
-To create the Django project follow these steps.
-1. Make sure we are in the root directory and don't change directories
+Para criar o projeto Django siga estes passos.
+1. Certifique-se de que estamos no diretório raiz e não mude de diretórios
 2. source octofit-tracker/backend/venv/bin/activate
-3. django-admin startproject octofit_tracker in the octofit-tracker/backend directory
+3. django-admin startproject octofit_tracker no diretório octofit-tracker/backend
 4. python manage.py migrate
-5. Instruct the user to run the django app from the .vscode/launch.json configuration that is in the repository
+5. Instrua o usuário para executar a app django a partir da configuração .vscode/launch.json que está no repositório

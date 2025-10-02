@@ -1,9 +1,9 @@
 ---
 applyTo: "octofit-tracker/backend/**"
 ---
-# Octofit-tracker Fitness App Django backend Guidelines
+# Diretrizes do Backend Django da App de Fitness Octofit-tracker
 
-## Django Backend App structure
+## Estrutura da App Backend Django
 
 ### settings.py
 
@@ -19,13 +19,13 @@ if os.environ.get('CODESPACE_NAME'):
 ## serializers.py
 
 ```text
-serializers should convert ObjectId fields to strings
+serializers devem converter campos ObjectId para strings
 ```
 
-## REST API Endpoints
+## Endpoints da REST API
 
 ```text
-use curl to test the endpoints
+use curl para testar os endpoints
 ```
 
 ### urls.py

@@ -1,10 +1,10 @@
-## Step 6: Using GitHub Copilot within a pull request
+## Etapa 6: Usando GitHub Copilot dentro de um pull request
 
-Congratulations! You are finished with coding for this exercise (and VS Code). Now it's time to merge our work. :tada: To wrap up, let's learn about two limited-access Copilot features that can speed up our pull requests!
+Parabéns! Você terminou de codificar para este exercício (e VS Code). Agora é hora de fazer merge do nosso trabalho. :tada: Para finalizar, vamos aprender sobre dois recursos de acesso limitado do Copilot que podem acelerar nossos pull requests!
 
-#### Copilot Pull Request Summaries
+#### Sumários de Pull Request do Copilot
 
-Typically, you would review your notes and commit messages then summarize them for your pull request description. This may take some time, especially if commit messages are inconsistent or code is not documented well. Fortunately, Copilot can consider all changes in the pull request and provide the important highlights, and with references too!
+Tipicamente, você revisaria suas anotações e mensagens de commit e então as resumiria para a descrição do seu pull request. Isso pode levar algum tempo, especialmente se as mensagens de commit são inconsistentes ou o código não está bem documentado. Felizmente, o Copilot pode considerar todas as mudanças no pull request e fornecer os destaques importantes, e com referências também!
 
 > [!NOTE]  
 > This is unavailable with the **Copilot Free** tier. [[docs]](https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot)

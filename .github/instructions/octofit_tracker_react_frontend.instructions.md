@@ -1,11 +1,11 @@
 ---
 applyTo: "octofit-tracker/frontend/**"
 ---
-# Octofit-tracker Fitness App React frontend Guidelines
+# Diretrizes do Frontend React da App de Fitness Octofit-tracker
 
-## REACT Frontend App structure
+## Estrutura da App Frontend REACT
 
-Make sure in all commands we point to the `octofit-tracker/frontend` directory
+Certifique-se de que em todos os comandos apontamos para o diretório `octofit-tracker/frontend`
 
 ```bash
 npx create-react-app octofit-tracker/frontend --template cra-template --use-npm
@@ -19,6 +19,6 @@ npm install react-router-dom --prefix octofit-tracker/frontend
 
 ```
 
-## Images for the OctoFit Tracker App
+## Imagens para a App OctoFit Tracker
 
-The image to use for the app is in the root of this repository docs/octofitapp-small.png
+A imagem para usar na app está na raiz deste repositório docs/octofitapp-small.png

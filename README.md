@@ -1,50 +1,50 @@
-# Build applications with GitHub Copilot agent mode
+# Construa aplicações com o modo agent do GitHub Copilot
 
 <!-- ![](../../actions/workflows/0-start-course.yml/badge.svg?branch=main) -->
 <img src="https://github.com/user-attachments/assets/1b3ea5df-f18d-4ed8-9ae6-f96dc1861818" alt="octofit-tracker" width="300"/>
 
-_Build an application with GitHub Copilot agent mode in less than an hour._
+_Construa uma aplicação com o modo agent do GitHub Copilot em menos de uma hora._
 
-## Welcome
+## Bem-vindo
 
-People love how GitHub Copilot helps them write code faster and with fewer errors.
-But what if GitHub could create a multi-tier application with a presentation, logic, and data layers based on requirements written in natural language?
-In this exercise, we will prompt GitHub Copilot agent mode to create a complete application.
+As pessoas adoram como o GitHub Copilot as ajuda a escrever código mais rápido e com menos erros.
+Mas e se o GitHub pudesse criar uma aplicação multi-camadas com apresentação, lógica e camadas de dados baseadas em requisitos escritos em linguagem natural?
+Neste exercício, iremos usar o modo agent do GitHub Copilot para criar uma aplicação completa.
 
-- **Who is this for**: Intermediate developers familiar with GitHub Copilot, basic GitHub, and basic web development
-- **What you'll learn**: We'll introduce GitHub Copilot agent mode and how to use it for application development.
-- **What you'll build**: You'll use GitHub Copilot agent mode to create a fitness application as the gym teacher of a high school.
-- **Prerequisites**: Skills Exercise: <a href="https://github.com/skills/getting-started-with-github-copilot">Getting Started with GitHub Copilot</a>.
-- **How long**: This course takes less than one hour to complete.
+- **Para quem é**: Desenvolvedores intermediários familiarizados com GitHub Copilot, GitHub básico e desenvolvimento web básico
+- **O que você vai aprender**: Apresentaremos o modo agent do GitHub Copilot e como usá-lo para desenvolvimento de aplicações.
+- **O que você vai construir**: Você usará o modo agent do GitHub Copilot para criar uma aplicação de fitness como professor de educação física de uma escola.
+- **Pré-requisitos**: Exercício de Habilidades: <a href="https://github.com/skills/getting-started-with-github-copilot">Começando com GitHub Copilot</a>.
+- **Duração**: Este curso leva menos de uma hora para ser concluído.
 
-In this exercise, you will:
+Neste exercício, você irá:
 
-1. Start up a preconfigured development environment for making a multi-tier application.
-1. Prompt in GitHub Copilot Chat and select the edit tab and select agent mode from the edit/agent drop-down.
-1. In this exercise I primarily used the latest default LLM.
-1. Try other LLM models to see other output.
-1. For each step open up a new Copilot Chat session by hitting the plus `+` icon in the Copilot Chat pane.
+1. Inicializar um ambiente de desenvolvimento pré-configurado para criar uma aplicação multi-camadas.
+1. Fazer prompts no GitHub Copilot Chat e selecionar a aba edit e escolher o modo agent no menu suspenso edit/agent.
+1. Neste exercício eu usei principalmente o LLM padrão mais recente.
+1. Experimentar outros modelos LLM para ver diferentes saídas.
+1. Para cada etapa, abra uma nova sessão do Copilot Chat clicando no ícone de mais `+` no painel do Copilot Chat.
 
-### How to start this exercise
+### Como iniciar este exercício
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+Simplesmente copie o exercício para sua conta, então dê ao seu Octocat favorito (Mona) **cerca de 20 segundos** para preparar a primeira lição, depois **atualize a página**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=arilivigni&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=skills-build-applications-w-copilot-agent-mode&description=Exercise:+Build+applications+with+GitHub+Copilot+agent+mode&visibility=public)
+[![](https://img.shields.io/badge/Copiar%20Exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=arilivigni&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=skills-build-applications-w-copilot-agent-mode&description=Exercicio:+Construa+aplicacoes+com+modo+agent+do+GitHub+Copilot&visibility=public)
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-When copying the exercise, we recommend the following settings:
+Ao copiar o exercício, recomendamos as seguintes configurações:
 
-- For owner, choose your personal account or an organization to host the repository.
+- Para proprietário, escolha sua conta pessoal ou uma organização para hospedar o repositório.
 
-- We recommend creating a public repository, since private repositories will use Actions minutes.
+- Recomendamos criar um repositório público, pois repositórios privados usarão minutos do Actions.
 
-If the exercise isn't ready in 20 seconds, please check the "Actions" tab of your repository (or visit `https://github.com/<YOUR-USERNAME>/<YOUR-REPO>/actions`).
+Se o exercício não estiver pronto em 20 segundos, verifique a aba "Actions" do seu repositório (ou visite `https://github.com/<SEU-USUARIO>/<SEU-REPO>/actions`).
 
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
+- Verifique se um job está sendo executado. Às vezes simplesmente demora um pouco mais.
 
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+- Se a página mostrar um job que falhou, por favor envie uma issue. Legal, você encontrou um bug! 🐛
 
 </details>
 

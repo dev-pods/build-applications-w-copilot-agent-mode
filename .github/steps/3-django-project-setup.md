@@ -1,4 +1,4 @@
-## Step 3: Initialize and create the octofit_db MongoDB database, Django project/app, update Django project/app files, and populate the MongoDB database
+## Etapa 3: Inicializar e criar o banco de dados MongoDB octofit_db, projeto/app Django, atualizar arquivos do projeto/app Django e popular o banco de dados MongoDB
 
 In this step, we will accomplish the following:
 
@@ -8,15 +8,15 @@ In this step, we will accomplish the following:
 - Populate the octofit_db database with test data.
 - Verify the test data is populated in the octofit_db database.
 
-Copy and paste the following prompt(s) in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > [!NOTE]
-> - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.
-> - Wait a moment for the Copilot to respond and press the `Continue` button to execute commands presented by Copilot agent mode.
-> - Keep files created and updated by Copilot agent mode until it is finished.
-> - Agent mode has the ability to evaluate your code base and execute commands and add/refactor/delete parts of your code base and automatically self heal if it or you makes a mistake in the process.
+> - Tenha em mente que o modo agent do Copilot é conversacional, então ele pode fazer perguntas para você e você pode fazer perguntas para ele também.
+> - Aguarde um momento para o Copilot responder e pressione o botão `Continue` para executar comandos apresentados pelo modo agent do Copilot.
+> - Mantenha os arquivos criados e atualizados pelo modo agent do Copilot até que ele termine.
+> - O modo agent tem a habilidade de avaliar sua base de código e executar comandos e adicionar/refatorar/deletar partes da sua base de código e se auto-curar automaticamente se ele ou você comete um erro no processo.
 
-**Open up a new Copilot Chat session by hitting the plus `+` icon in the Copilot Chat pane.**
+**Abra uma nova sessão do Copilot Chat clicando no ícone de mais `+` no painel do Copilot Chat.**
 
 ### :keyboard: Activity: Setup the Python Django project/app
 

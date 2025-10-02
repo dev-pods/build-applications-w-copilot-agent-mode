@@ -1,17 +1,17 @@
-## Review
+## Revisão
 
-_Congratulations, you've completed this exercise and learned a lot about GitHub Copilot agent mode!_
+_Parabéns, você completou este exercício e aprendeu muito sobre o modo agent do GitHub Copilot!_
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
-Here's a recap of your accomplishments:
+Aqui está um resumo das suas conquistas:
 
-- Set up your GitHub Codespace and environment.
-- Learned how to use Copilot inline suggestions, Chat, and Edits.
-- Used Copilot to generate commit messages and pull request summaries.
-- Learned how to request Copilot to review your code.
+- Configurou seu GitHub Codespace e ambiente.
+- Aprendeu como usar sugestões inline do Copilot, Chat e Edits.
+- Usou o Copilot para gerar mensagens de commit e sumários de pull request.
+- Aprendeu como solicitar ao Copilot para revisar seu código.
 
-### What's next?
+### O que vem a seguir?
 
 - Continue working on the project
   - Use Copilot to add an ability for login and authentication.

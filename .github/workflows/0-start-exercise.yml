@@ -1,4 +1,4 @@
-name: Step 0 # Start Exercise build-applications-w-GHCP-agent-mode
+name: Etapa 0 # Iniciar Exercício construir-aplicacoes-com-modo-agent-GHCP
 
 on:
   push:
@@ -17,18 +17,18 @@ jobs:
   start_exercise:
     if: |
       !github.event.repository.is_template
-    name: Start Exercise
+    name: Iniciar Exercício
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.7.0
     with:
-      exercise-title: "Build Applications with GitHub Copilot Agent Mode"
+      exercise-title: "Construa Aplicações com Modo Agent do GitHub Copilot"
       intro-message: |
-        "Welcome to the exciting world of GitHub Copilot agent mode! 🚀
-        In this exercise, you'll unlock the potential of this AI-powered
-        coding assistant to accelerate your development process. Let's dive in
-        and have some fun exploring the future of coding together! 💻✨"
+        "Bem-vindo ao empolgante mundo do modo agent do GitHub Copilot! 🚀
+        Neste exercício, você desbloqueará o potencial deste assistente de
+        codificação alimentado por IA para acelerar seu processo de desenvolvimento.
+        Vamos mergulhar e nos divertir explorando o futuro da codificação juntos! 💻✨"
 
   post_next_step_content:
-    name: Post next step content
+    name: Postar conteúdo da próxima etapa
     runs-on: ubuntu-latest
     needs: [start_exercise]
     env:
@@ -36,17 +36,17 @@ jobs:
       ISSUE_REPOSITORY: ${{ github.repository }}
 
     steps:
-      - name: Checkout
+      - name: Fazer Checkout
         uses: actions/checkout@v4
 
-      - name: Get response templates
+      - name: Obter templates de resposta
         uses: actions/checkout@v4
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
           ref: v0.7.0
 
-      - name: Create comment - add step content
+      - name: Criar comentário - adicionar conteúdo da etapa
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
@@ -56,14 +56,14 @@ jobs:
             login: ${{ github.actor }}
             full_repo_name: ${{ github.repository }}
 
-      - name: Create comment - watching for progress
+      - name: Criar comentário - observando progresso
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
 
-      - name: Enable next step workflow
+      - name: Habilitar workflow da próxima etapa
         run: |
           gh workflow enable "Step 1"
         env:

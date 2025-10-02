@@ -1,4 +1,4 @@
-## Step 4: Setup Django REST Framework, start the server, and test the API
+## Etapa 4: Configurar Django REST Framework, iniciar o servidor e testar a API
 
 In this step, we will accomplish the following:
 
@@ -6,7 +6,7 @@ In this step, we will accomplish the following:
 - Start the server.
 - Test the API using curl.
 
-Copy and paste the following prompt(s) in the GitHub Copilot Chat and select the "Agent" instead of "Ask" or "Edit" from the drop down where you are inserting the prompt.
+Copie e cole o(s) seguinte(s) prompt(s) no GitHub Copilot Chat e selecione "Agent" ao invés de "Ask" ou "Edit" no menu suspenso onde você está inserindo o prompt.
 
 > [!TIP]
 > - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.

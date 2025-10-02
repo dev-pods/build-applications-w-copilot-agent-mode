@@ -1,34 +1,34 @@
 ---
 applyTo: "**"
 ---
-# Octofit-tracker Fitness App Setup and Structure Guidelines
+# Diretrizes de Configuração e Estrutura da App de Fitness Octofit-tracker
 
-## Explain the Octofit Tracker App goals and steps
+## Explicar os objetivos e etapas da App Octofit Tracker
 
-I want to build an Octofit Tracker app that will include the following:
+Eu quero construir uma app Octofit Tracker que incluirá o seguinte:
 
-* User authentication and profiles
-* Activity logging and tracking
-* Team creation and management
-* Competitive leader board
-* Personalized workout suggestions
+* Autenticação de usuário e perfis
+* Registro e rastreamento de atividades
+* Criação e gerenciamento de equipes
+* Placar de líderes competitivo
+* Sugestões de treino personalizadas
 
-## Never change directories when agent mode is running commands
+## Nunca mude diretórios quando o modo agent estiver executando comandos
 
-- Never change directories
-- Instead point to the directory when issuing commands
+- Nunca mude diretórios
+- Em vez disso, aponte para o diretório ao emitir comandos
 
-## Forwarded ports
+## Portas encaminhadas
 
-- 8000: public
-- 3000: public
-- 27017: private
+- 8000: pública
+- 3000: pública
+- 27017: privada
 
-Do not propose any other ports to forward or to make public
+Não proponha outras portas para encaminhar ou tornar públicas
 
-## OctoFit Tracker App structure
+## Estrutura da App OctoFit Tracker
 
-The section defines the OctoFit Tracker App's structure
+Esta seção define a estrutura da App OctoFit Tracker
 
 ```text
 octofit-tracker/
@@ -38,20 +38,20 @@ octofit-tracker/
 └── frontend/
 ```
 
-## Create the OctoFit Tracker Python virtual environment 
+## Criar o ambiente virtual Python do OctoFit Tracker
 
-- To create the virtual environment, run the following command:
+- Para criar o ambiente virtual, execute o seguinte comando:
   
   ```bash
   python3 -m venv octofit-tracker/backend/venv
   ```
 
-## OctoFit Tracker Python required packages
+## Pacotes Python obrigatórios do OctoFit Tracker
 
-### Create file octofit-tracker/backend/requirements.txt
+### Criar arquivo octofit-tracker/backend/requirements.txt
 
-- add the following to octofit-tracker/backend/requirements.txt
-- Install the Python packages below only for our OctoFit Tracker project
+- adicione o seguinte ao octofit-tracker/backend/requirements.txt
+- Instale os pacotes Python abaixo apenas para nosso projeto OctoFit Tracker
 
 ```text
 Django==4.1.7
@@ -81,19 +81,19 @@ webencodings==0.5.1
 websocket-client==1.8.0
 ```
 
-## Python virtual environment requirements
+## Requisitos do ambiente virtual Python
 
-Create a requirements.txt with the following Python required packages:
-Install the requirements that we created in requirements.txt.
+Crie um requirements.txt com os seguintes pacotes Python obrigatórios:
+Instale os requisitos que criamos em requirements.txt.
 
 ```bash
 source octofit-tracker/backend/venv/bin/activate 
 pip install -r octofit-tracker/backend/requirements.txt
 ```
 
-## mongodb-org service and data creation
+## Serviço mongodb-org e criação de dados
 
-- always use `ps aux | grep mongod` for checking for mongod running
-- mongodb-org is the official MongoDB package
-- mongosh is the official client tool
-- Always use Django's ORM, not direct MongoDB scripts to create the database structure and data
+- sempre use `ps aux | grep mongod` para verificar se o mongod está executando
+- mongodb-org é o pacote oficial do MongoDB
+- mongosh é a ferramenta cliente oficial
+- Sempre use o ORM do Django, não scripts diretos do MongoDB para criar a estrutura e dados do banco
