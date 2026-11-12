@@ -9,7 +9,7 @@ import { validateExercise } from '../.github/scripts/validate-exercise.mjs';
 const repositoryRoot = path.resolve(import.meta.dirname, '..');
 function temp() { return fs.mkdtempSync(path.join(os.tmpdir(), 'octofit-validation-')); }
 function write(root, file, content) { const p = path.join(root, file); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, content); }
-function copyMetadata() { const root = temp(); fs.copyFileSync(path.join(repositoryRoot, 'README.md'), path.join(root, 'README.md')); fs.cpSync(path.join(repositoryRoot, '.github'), path.join(root, '.github'), { recursive: true });
+function copyMetadata() { const root = temp(); fs.copyFileSync(path.join(repositoryRoot, 'README.md'), path.join(root, 'README.md')); fs.mkdirSync(path.join(root, 'docs'), { recursive: true }); fs.copyFileSync(path.join(repositoryRoot, 'docs/architecture.md'), path.join(root, 'docs/architecture.md')); fs.cpSync(path.join(repositoryRoot, '.github'), path.join(root, '.github'), { recursive: true });
   fs.cpSync(path.join(repositoryRoot, '.devcontainer'), path.join(root, '.devcontainer'), { recursive: true });
   for (const file of ['octofit-tracker/frontend/src/api/client.ts', ...Object.keys(protectedContracts)]) { fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true }); fs.copyFileSync(path.join(repositoryRoot, file), path.join(root, file)); }
   return root;
@@ -35,6 +35,30 @@ function completedFixture() {
 
 test('exercise metadata passes structural and safety validation', () => {
   assert.doesNotThrow(() => validateExercise(repositoryRoot));
+});
+
+test('diagram architecture is Mermaid and image assets are absent', () => {
+  const root = copyAll();
+  const images = path.join(root, '.github/images');
+  fs.mkdirSync(images);
+  assert.throws(() => validateExercise(root), /Remove image assets from \.github\/images/);
+
+  fs.rmSync(images, { recursive: true });
+  const architecture = path.join(root, 'docs/architecture.md');
+  fs.writeFileSync(architecture, fs.readFileSync(architecture, 'utf8').replace(/```mermaid[\s\S]*?```/, '![Architecture](architecture.svg)'));
+  assert.throws(() => validateExercise(root), /Architecture diagram must use a Mermaid flowchart/);
+});
+
+test('copy link points to this template and review images use the template asset', () => {
+  const wrongOwner = copyAll();
+  const readme = path.join(wrongOwner, 'README.md');
+  fs.writeFileSync(readme, fs.readFileSync(readme, 'utf8').replace('template_owner=dev-pods', 'template_owner=skills'));
+  assert.throws(() => validateExercise(wrongOwner), /Copy Exercise badge must point to the dev-pods exercise template/);
+
+  const wrongImage = copyAll();
+  const review = path.join(wrongImage, '.github/steps/x-review.md');
+  fs.writeFileSync(review, fs.readFileSync(review, 'utf8').replace('https://octodex.github.com/images/jetpacktocat.png', 'https://example.com/custom.png'));
+  assert.throws(() => validateExercise(wrongImage), /Review images must come from the exercise-template/);
 });
 
 test('starter scaffold does not pass learner grading before implementation', () => {

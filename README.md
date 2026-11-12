@@ -2,8 +2,6 @@
 
 _Use o modo agent do GitHub Copilot para implementar, testar e revisar uma aplicação React + Express + MongoDB com base em contratos executáveis._
 
-<img src=".github/images/octofit-tracker-pt-br.svg" alt="Banner do GitHub Skills para construir e testar uma aplicação multicamadas com o GitHub Copilot" width="720"/>
-
 ## Boas-vindas
 
 - **Para quem é**: pessoas desenvolvedoras familiarizadas com GitHub, VS Code, JavaScript/TypeScript e fluxos básicos do GitHub Copilot.
@@ -28,7 +26,7 @@ Neste exercício, você vai:
 
 Copie o exercício para sua conta, aguarde cerca de **20 segundos** para que a Mona prepare a primeira lição e atualize a página.
 
-[![Copiar exercício](https://img.shields.io/badge/Copiar%20exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=skills-build-applications-w-copilot-agent-mode&description=Exercicio:+Construa+e+teste+uma+aplicacao+multicamadas+com+o+GitHub+Copilot&visibility=public)
+[![Copiar exercício](https://img.shields.io/badge/Copiar%20exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=dev-pods&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=build-applications-w-copilot-agent-mode&description=Exercicio:+Construa+e+teste+uma+aplicacao+multicamadas+com+o+GitHub+Copilot&visibility=public)
 
 <details>
 <summary>Está com dificuldades? 🤷</summary><br/>

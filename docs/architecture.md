@@ -2,7 +2,21 @@
 
 O OctoFit Tracker é uma aplicação de três camadas para um programa de atividades físicas escolar. O código inicial inclui contratos de API e pontos de implementação intencionalmente incompletos para que você use o modo agent do GitHub Copilot em um ciclo guiado por testes.
 
-![Arquitetura de três camadas do OctoFit](../.github/images/octofit-architecture.svg)
+```mermaid
+flowchart LR
+    Browser["Navegador"]
+    UI["Apresentação<br/>React 19 · Vite · React Router · Bootstrap<br/>Porta 3000 · pública"]
+    API["Lógica<br/>Express · TypeScript · serviços<br/>Porta 8000 · pública"]
+    DB["Dados<br/>Mongoose · MongoDB<br/>Porta 27017 · privada"]
+    Contracts["Contratos executáveis<br/>Atividades · Equipes · Placar · Sugestões"]
+
+    Browser --> UI
+    UI -->|HTTP /api via proxy Vite| API
+    API -->|Mongoose| DB
+    Contracts -. verificam .-> UI
+    Contracts -. verificam .-> API
+    Contracts -. verificam .-> DB
+```
 
 ## Limites entre as camadas
 
