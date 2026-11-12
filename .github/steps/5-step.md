@@ -1,14 +1,14 @@
-## Step 5: Verify the system and merge a reviewed pull request
+## Step 5: Verifique o sistema e faça merge de um pull request revisado
 
-Continue on the `build-octofit-app` branch and keep each Copilot request bounded by the tests for this tier.
+Continue na branch `build-octofit-app` e delimite cada solicitação ao Copilot pelos testes desta camada.
 
-### 📖 Theory: Integration evidence before merge
+### 📖 Theory: Evidências de integração antes do merge
 
-Passing isolated tests is necessary but not sufficient for a multi-tier application. The final verification should prove the data, API, and UI contracts agree, then use a pull request to review the complete change as one system. Copilot can summarize and review the diff, but you remain responsible for checking the evidence and resolving issues before merge.
+Testes isolados aprovados são necessários, mas não suficientes para uma aplicação multicamadas. A verificação final deve demonstrar que os contratos de dados, API e interface concordam; depois, use um pull request para revisar a alteração completa como um sistema. O Copilot pode resumir e revisar o diff, mas você continua responsável por verificar as evidências e resolver problemas antes do merge.
 
-### ⌨️ Activity: Verify the system and merge a reviewed pull request
+### ⌨️ Activity: Verifique o sistema e faça merge de um pull request revisado
 
-1. Run the complete verification suite and both production builds.
+1. Execute a suíte completa de verificação e os dois builds de produção.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -20,7 +20,7 @@ Passing isolated tests is necessary but not sufficient for a multi-tier applicat
    > npm run build --prefix octofit-tracker/frontend
    > ```
 
-1. Confirm MongoDB is running, then start the API in a dedicated terminal and leave it running.
+1. Confirme que o MongoDB está em execução, inicie a API em um terminal dedicado e mantenha-a em execução.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -30,7 +30,7 @@ Passing isolated tests is necessary but not sufficient for a multi-tier applicat
    > npm run dev --prefix octofit-tracker/backend
    > ```
 
-1. In a second terminal, start the frontend and leave it running.
+1. Em outro terminal, inicie o frontend e mantenha-o em execução.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -38,18 +38,18 @@ Passing isolated tests is necessary but not sufficient for a multi-tier applicat
    > npm run dev --prefix octofit-tracker/frontend -- --host 0.0.0.0
    > ```
 
-1. Open forwarded port 5173, verify all four user journeys, and trigger at least one visible error path.
+1. Abra a aplicação no Codespace, verifique as quatro jornadas de usuário e provoque pelo menos um erro visível.
 
-1. Open a pull request from `build-octofit-app` to `main`, include test evidence, and use Copilot Summary or code review to inspect the multi-tier diff.
+1. Abra um pull request de `build-octofit-app` para `main`, inclua evidências dos testes e use o resumo ou a revisão de código do Copilot para inspecionar o diff multicamadas.
 
-1. Address valid findings, rerun the checks, and merge the pull request.
+1. Resolva os apontamentos válidos, execute novamente as verificações e faça merge do pull request.
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Having trouble? 🤷 Precisa de ajuda?</summary><br/>
 
-- Do not merge a closed or failing pull request.
-- Confirm environment-aware URLs use the Codespaces name only when present.
-- Check the Actions run for the first failing tier and reproduce it locally.
-- If the final check fails after merging, fix the issue on `build-octofit-app`, rerun the tests above, and merge a new pull request into `main`. Final grading runs on merged pull requests only.
+- Não faça merge de um pull request fechado ou com verificações falhando.
+- Confirme que as URLs dependentes do ambiente usam o nome do Codespace apenas quando ele estiver presente.
+- Consulte a execução do Actions para identificar a primeira camada com falha e reproduza-a localmente.
+- Se a verificação final falhar após o merge, corrija o problema em `build-octofit-app`, execute novamente os testes acima e faça merge de um novo pull request em `main`. A avaliação final ocorre apenas em pull requests com merge.
 
 </details>

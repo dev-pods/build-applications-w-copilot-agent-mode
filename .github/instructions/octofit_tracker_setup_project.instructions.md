@@ -2,11 +2,11 @@
 applyTo: "**/*"
 ---
 
-# OctoFit project setup instructions
+# Instruções de configuração do projeto OctoFit
 
-Preserve these constraints across every tier:
+Preserve estas restrições em todas as camadas:
 
-- Use MongoDB on port 27017, the Express API on port 8000, and Vite on port 5173.
-- Keep presentation, logic, and data responsibilities separated.
-- Prefer small test-driven changes over broad regeneration.
-- Do not introduce authentication in this exercise; leave it as a follow-up challenge.
+- Use MongoDB na porta 27017, a API Express na porta 8000 e Vite na porta 5173.
+- Mantenha separadas as responsabilidades de apresentação, lógica e dados.
+- Prefira pequenas alterações orientadas por testes à regeneração ampla.
+- Não introduza autenticação neste exercício; deixe-a como desafio posterior.

@@ -27,8 +27,8 @@ permissions: {}
 jobs:
   validate:
     name: Validate exercise metadata and scaffold
-    # Maintainer-only: learner copies are not templates and are graded by the step workflows instead.
-    if: github.event.repository.is_template
+    # Maintainer-only: learner copies are graded by the step workflows instead.
+    if: github.repository == 'dev-pods/build-applications-w-copilot-agent-mode'
     runs-on: ubuntu-latest
     permissions:
       contents: read

@@ -2,10 +2,10 @@
 applyTo: "octofit-tracker/backend/**"
 ---
 
-# OctoFit backend instructions
+# Instruções do backend OctoFit
 
-- Use Express, TypeScript, Mongoose, and explicit service functions.
-- Keep routes under `/api/` and return deliberate 4xx responses for invalid input.
-- Keep model validation in Mongoose schemas and business behavior in services.
-- Use the shared database configuration instead of hard-coded connection logic.
-- Seed stable demo records with upserts; never clear collections that may contain user data, and reconcile an existing demo user's previous team membership when moving that fixture.
+- Use Express, TypeScript, Mongoose e funções de serviço explícitas.
+- Mantenha as rotas em `/api/` e retorne respostas 4xx deliberadas para entradas inválidas.
+- Mantenha a validação de modelos nos schemas Mongoose e as regras de negócio nos serviços.
+- Use a configuração compartilhada de banco de dados em vez de lógica de conexão codificada diretamente.
+- Insira registros de demonstração estáveis com upserts; nunca limpe coleções que possam conter dados de usuários e reconcilie a associação anterior de um usuário de demonstração ao movê-lo de equipe.

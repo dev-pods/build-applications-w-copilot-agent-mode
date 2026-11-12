@@ -1,27 +1,27 @@
 #!/bin/bash
-# This script is run after the container starts up.
+# Este script é executado após a inicialização do contêiner.
 
 set -euo pipefail
 
 die() {
-  echo "ERROR: $@" >&2
+  echo "ERRO: $@" >&2
   exit 1
 }
 
 if [ -n "${CODESPACE_NAME:-}" ]; then
-  # The API has no authentication, so keep every app port private to the Codespace owner.
-  # The browser reaches the API through the Vite /api proxy on 5173.
-  echo "Setting multi-tier application port visibility..."
-  gh cs ports visibility 8000:private -c "$CODESPACE_NAME" || die "Failed to set 8000 private"
-  gh cs ports visibility 5173:private -c "$CODESPACE_NAME" || die "Failed to set 5173 private"
-  gh cs ports visibility 27017:private -c "$CODESPACE_NAME" || die "Failed to set 27017 private"
+  # A API não tem autenticação; mantenha as portas privadas ao proprietário do Codespace.
+  # O navegador acessa a API pelo proxy /api do Vite.
+  echo "Configurando a visibilidade das portas da aplicação..."
+  gh cs ports visibility 8000:private -c "$CODESPACE_NAME" || die "Falha ao tornar 8000 privada"
+  gh cs ports visibility 5173:private -c "$CODESPACE_NAME" || die "Falha ao tornar 5173 privada"
+  gh cs ports visibility 27017:private -c "$CODESPACE_NAME" || die "Falha ao tornar 27017 privada"
 else
-  echo "CODESPACE_NAME is not set; skipping Codespaces port visibility configuration."
+  echo "CODESPACE_NAME não está definido; ignorando a configuração de visibilidade do Codespaces."
 fi
 
-echo "Preparing MongoDB data dir..."
-sudo mkdir -p /data/db || die "mkdir failed"
-sudo chmod 777 /data/db || die "chmod failed"
+echo "Preparando o diretório de dados do MongoDB..."
+sudo mkdir -p /data/db || die "Falha em mkdir"
+sudo chmod 777 /data/db || die "Falha em chmod"
 
 LOGFILE=/tmp/mongod.log
 MAX_START_TRIES=3
@@ -38,11 +38,11 @@ mongod_pid() {
 
 start_mongod() {
   if is_running; then
-    echo "mongod already running"
+    echo "mongod já está em execução"
     return 0
   fi
   > "$LOGFILE"
-  echo "Launching mongod (dbpath=/data/db, log=$LOGFILE)..."
+  echo "Iniciando mongod (dbpath=/data/db, log=$LOGFILE)..."
   mongod --dbpath /data/db --fork --logpath "$LOGFILE"
 }
 
@@ -62,7 +62,7 @@ ready_check() {
 wait_for_ready() {
   for ((i=1; i<=READY_CHECK_RETRIES; i++)); do
     if ready_check; then
-      echo "mongod is ready (after $i checks)."
+      echo "mongod está pronto (após $i verificações)."
       return 0
     fi
     sleep "$READY_CHECK_INTERVAL"
@@ -70,21 +70,21 @@ wait_for_ready() {
   return 1
 }
 
-echo "Starting MongoDB with retries..."
+echo "Iniciando MongoDB com novas tentativas..."
 for ((attempt=1; attempt<=MAX_START_TRIES; attempt++)); do
-  echo "Start attempt $attempt/$MAX_START_TRIES"
+  echo "Tentativa $attempt/$MAX_START_TRIES"
   if start_mongod && wait_for_ready; then
     tail -20 "$LOGFILE" || true
-    echo "MongoDB started successfully."
+    echo "MongoDB iniciado com sucesso."
     break
   fi
 
   if (( attempt == MAX_START_TRIES )); then
     tail -40 "$LOGFILE" || true
-    die "MongoDB failed to start after $MAX_START_TRIES attempts"
+    die "MongoDB não iniciou após $MAX_START_TRIES tentativas"
   fi
 
-  echo "Cleaning up before next attempt..."
+  echo "Limpando antes da próxima tentativa..."
   cleaned_up=false
   while IFS= read -r pid; do
     if [ -n "$pid" ]; then
@@ -97,5 +97,5 @@ for ((attempt=1; attempt<=MAX_START_TRIES; attempt++)); do
   fi
 done
 
-echo "post_start.sh completed successfully."
+echo "post_start.sh concluído com sucesso."
 exit 0

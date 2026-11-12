@@ -1,13 +1,13 @@
-👋 Welcome to building a modern multi-tier application with GitHub Copilot agent mode!
+👋 Boas-vindas à criação de uma aplicação multicamadas moderna com o modo Agent do GitHub Copilot!
 
-You will build OctoFit Tracker using:
-- Presentation tier: React 19
-- Logic tier: Node.js + Express + TypeScript
-- Data tier: MongoDB
+Você criará o OctoFit Tracker usando:
+- Camada de apresentação: React 19
+- Camada de lógica: Node.js + Express + TypeScript
+- Camada de dados: MongoDB
 
-Ports used in this exercise:
-- 5173 (private, Vite proxies /api to the API)
-- 8000 (private, unauthenticated API)
-- 27017 (private)
+Portas usadas neste exercício:
+- 5173 (privada, o Vite encaminha /api para a API)
+- 8000 (privada, API sem autenticação)
+- 27017 (privada)
 
-📃 GitHub Copilot documentation: https://docs.github.com/en/copilot
+📃 Documentação do GitHub Copilot: https://docs.github.com/pt/copilot

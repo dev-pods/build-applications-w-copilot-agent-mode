@@ -155,7 +155,7 @@ export function validateExercise(root = process.cwd()) {
     }],
     ['README contract', () => {
       const readme = readText(root, 'README.md');
-      assertValid(/template_owner=skills&template_name=build-applications-w-copilot-agent-mode/.test(readme), 'Copy Exercise badge has the wrong template owner or name');
+      assertValid(/template_owner=dev-pods&template_name=build-applications-w-copilot-agent-mode/.test(readme), 'Copy Exercise badge has the wrong template owner or name');
       assertValid(/## Welcome/.test(readme) && /Having trouble\? 🤷/.test(readme), 'README must include welcome and troubleshooting sections');
       assertValid(/\.github\/images\/octofit-tracker\.png/.test(readme), 'README must reference the hero image');
     }],
@@ -256,10 +256,10 @@ export function validateExercise(root = process.cwd()) {
       assertValid(!/\b(?:8000|5173|27017):(?!private\b)\w+/.test(postStart), 'post_start.sh must not make the unauthenticated API, frontend, or MongoDB ports public');
       for (const port of ['8000', '5173', '27017']) assertValid(new RegExp(`gh cs ports visibility ${port}:private\\b`).test(postStart), `post_start.sh must set port ${port} to private`);
       const validation = readText(root, '.github/workflows/validate-exercise.yml');
-      assertValid(/^\s*if:\s*github\.event\.repository\.is_template\s*$/m.test(validation), 'validate-exercise.yml must only run in the template repository; learner copies intentionally diverge from the starter');
+      assertValid(/^\s*if:\s*github\.repository\s*==\s*['"]dev-pods\/build-applications-w-copilot-agent-mode['"]\s*$/m.test(validation), 'validate-exercise.yml must only run in the maintainer repository; learner copies intentionally diverge from the starter');
       assertValid((validation.match(/^\s*-\s*["']?\.vscode\/\*\*["']?\s*$/gm) ?? []).length === 2, 'validate-exercise.yml must trigger on .vscode/** for both pull_request and push');
       const welcome = readText(root, '.devcontainer/welcome-message.txt');
-      assertValid(!/\bpublic\b/i.test(welcome), 'welcome-message.txt must not describe any port as public; ports 8000 and 5173 stay private');
+      assertValid(!/\bpublic\b|públic[ao]s?\b/i.test(welcome), 'welcome-message.txt must not describe any port as public; ports 8000 and 5173 stay private');
       const client = readText(root, 'octofit-tracker/frontend/src/api/client.ts');
       assertValid(!/app\.github\.dev|CODESPACE_NAME/.test(client), 'The API client must use relative /api paths through the Vite proxy, not a public Codespaces URL');
     }],

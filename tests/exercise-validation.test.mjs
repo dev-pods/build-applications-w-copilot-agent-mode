@@ -37,6 +37,13 @@ test('exercise metadata passes structural and safety validation', () => {
   assert.doesNotThrow(() => validateExercise(repositoryRoot));
 });
 
+test('copy exercise badge must use the fork as template owner', () => {
+  const root = copyMetadata();
+  const readme = path.join(root, 'README.md');
+  fs.writeFileSync(readme, fs.readFileSync(readme, 'utf8').replace('template_owner=dev-pods', 'template_owner=skills'));
+  assert.throws(() => validateExercise(root), /wrong template owner or name/);
+});
+
 test('starter scaffold does not pass learner grading before implementation', () => {
   for (const name of ['step1-architecture', 'step2-data', 'step3-api', 'step4-frontend']) {
     assert.throws(() => checks[name](repositoryRoot));
@@ -300,7 +307,7 @@ test('action pins are enforced regardless of name casing', () => {
 test('codespace welcome message cannot describe app ports as public', () => {
   const root = copyMetadata();
   const welcome = path.join(root, '.devcontainer/welcome-message.txt');
-  fs.writeFileSync(welcome, fs.readFileSync(welcome, 'utf8').replace('8000 (private', '8000 (public'));
+  fs.writeFileSync(welcome, fs.readFileSync(welcome, 'utf8').replace('8000 (privada', '8000 (pública'));
   assert.throws(() => validateExercise(root), /welcome-message\.txt/);
   for (const wording of ['Public ports: 5173 and 8000\n', 'Make these public:\n- 5173\n- 8000\n']) {
     const reordered = copyMetadata();
@@ -322,11 +329,11 @@ test('MongoDB port cannot be exposed', () => {
   assert.throws(() => validateExercise(viaAttributes), /port 27017 visibility/);
 });
 
-test('maintainer validation is scoped to the template and watches .vscode', () => {
+test('maintainer validation is scoped to the fork and watches .vscode', () => {
   const unscoped = copyMetadata();
   const workflow = path.join(unscoped, '.github/workflows/validate-exercise.yml');
-  fs.writeFileSync(workflow, fs.readFileSync(workflow, 'utf8').replace(/^\s*if: github\.event\.repository\.is_template\n/m, ''));
-  assert.throws(() => validateExercise(unscoped), /template repository/);
+  fs.writeFileSync(workflow, fs.readFileSync(workflow, 'utf8').replace(/^\s*if: github\.repository == 'dev-pods\/build-applications-w-copilot-agent-mode'\n/m, ''));
+  assert.throws(() => validateExercise(unscoped), /maintainer repository/);
   const noVscode = copyMetadata();
   const other = path.join(noVscode, '.github/workflows/validate-exercise.yml');
   fs.writeFileSync(other, fs.readFileSync(other, 'utf8').replace('      - ".vscode/**"\n', ''));

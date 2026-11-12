@@ -1,24 +1,24 @@
-## Step 4: Build and test the React presentation tier
+## Step 4: Crie e teste a camada de apresentação React
 
-Continue on the `build-octofit-app` branch and keep each Copilot request bounded by the tests for this tier.
+Continue na branch `build-octofit-app` e delimite cada solicitação ao Copilot pelos testes desta camada.
 
-### 📖 Theory: UI states are part of the contract
+### 📖 Theory: Estados da interface fazem parte do contrato
 
-The presentation tier should make loading, empty, success, and error states visible while keeping API URL construction out of individual components. React Router provides navigable capability views, and component tests prove that API data becomes accessible, meaningful interface output. Testing these states makes Copilot-generated UI easier to trust and maintain.
+A camada de apresentação deve mostrar os estados de carregamento, vazio, sucesso e erro, mantendo a construção de URLs da API fora dos componentes individuais. O React Router oferece telas navegáveis para as funcionalidades, e os testes de componentes comprovam que os dados da API produzem uma interface acessível e significativa. Testar esses estados torna a interface gerada pelo Copilot mais confiável e fácil de manter.
 
-### ⌨️ Activity: Build and test the React presentation tier
+### ⌨️ Activity: Crie e teste a camada de apresentação React
 
-1. Inspect the shared API client, route stubs, and component tests.
+1. Inspecione o cliente de API compartilhado, as rotas incompletas e os testes de componentes.
 
-1. Ask Copilot for the smallest UI change from one failing test.
+1. Peça ao Copilot a menor alteração de interface necessária para um teste que falha.
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```text
-   > Use the failing frontend test to implement the smallest UI change. Reuse the shared API client and preserve loading, empty, and error states.
+   > Use o teste de frontend que falha para implementar a menor alteração de interface possível. Reutilize o cliente de API compartilhado e preserve os estados de carregamento, vazio e erro.
    > ```
 
-1. Repeat for activities, teams, leaderboard, and workout suggestions. Every route needs loading, empty, success, and error states, and workout suggestions must call `/api/workouts/suggestions/:userEmail` for a seeded user such as `mona@example.com`.
+1. Repita para atividades, equipes, placar e sugestões de treino. Cada rota precisa de estados de carregamento, vazio, sucesso e erro; as sugestões devem chamar `/api/workouts/suggestions/:userEmail` para um usuário dos dados iniciais, como `mona@example.com`.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -26,7 +26,7 @@ The presentation tier should make loading, empty, success, and error states visi
    > npm test --prefix octofit-tracker/frontend
    > ```
 
-1. Build and manually inspect the Vite app on port 5173.
+1. Gere o build e inspecione manualmente a aplicação Vite no Codespace.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -35,13 +35,13 @@ The presentation tier should make loading, empty, success, and error states visi
    > npm run dev --prefix octofit-tracker/frontend -- --host 0.0.0.0
    > ```
 
-1. Commit and push the presentation tier.
+1. Faça commit e push da camada de apresentação.
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Having trouble? 🤷 Precisa de ajuda?</summary><br/>
 
-- Keep the shared API client on relative `/api` paths (with an optional `import.meta.env.VITE_API_BASE_URL` override). The Vite proxy forwards them to port 8000, which stays private.
-- Keep fetch logic out of repeated components: each route component imports `getJson` from `src/api/client.ts` and never calls `fetch` directly.
-- Check accessible names and semantic status/error output when tests fail.
+- Mantenha o cliente compartilhado em caminhos relativos `/api`, com substituição opcional por `import.meta.env.VITE_API_BASE_URL`. O proxy do Vite os encaminha para a porta privada 8000.
+- Não repita a lógica de requisições nos componentes: cada componente de rota importa `getJson` de `src/api/client.ts` e nunca chama `fetch` diretamente.
+- Quando os testes falharem, verifique nomes acessíveis e a semântica das mensagens de status e erro.
 
 </details>

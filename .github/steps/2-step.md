@@ -1,24 +1,24 @@
-## Step 2: Implement the MongoDB data tier
+## Step 2: Implemente a camada de dados MongoDB
 
-Continue on the `build-octofit-app` branch and keep each Copilot request bounded by the tests for this tier.
+Continue na branch `build-octofit-app` e delimite cada solicitação ao Copilot pelos testes desta camada.
 
-### 📖 Theory: Model invariants and representative data
+### 📖 Theory: Invariantes de modelos e dados representativos
 
-Mongoose schemas should express the rules the rest of the application can rely on, not merely mirror arbitrary JSON. Relationships and validation for activities, teams, leaderboard inputs, and workout suggestions make downstream API behavior predictable. Focused model tests and representative seed data expose schema mistakes before they become HTTP or UI bugs.
+Os schemas Mongoose devem expressar as regras de que o restante da aplicação depende, em vez de apenas espelhar JSON arbitrário. Relacionamentos e validações de atividades, equipes, entradas do placar e sugestões de treino tornam o comportamento da API previsível. Testes focados e dados iniciais representativos revelam erros nos schemas antes de se tornarem problemas HTTP ou de interface.
 
-### ⌨️ Activity: Implement the MongoDB data tier
+### ⌨️ Activity: Implemente a camada de dados MongoDB
 
-1. Read the data-contract tests and the existing model stubs in `octofit-tracker/backend`.
+1. Leia os testes de contrato dos dados e os modelos incompletos em `octofit-tracker/backend`.
 
-1. Ask Copilot for a bounded data-tier plan.
+1. Peça ao Copilot um plano delimitado à camada de dados.
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```text
-   > Explain why the data-tier tests fail and propose changes limited to Mongoose models and seed data. Preserve the contracts and do not edit API or React files.
+   > Explique por que os testes da camada de dados falham e proponha alterações limitadas aos modelos Mongoose e aos dados iniciais. Preserve os contratos e não edite arquivos da API ou do React.
    > ```
 
-1. Implement schemas and seed records in small changes, running the data tests after each capability. Use stable fixture keys and upserts so rerunning the seed preserves unrelated MongoDB records.
+1. Implemente schemas e dados iniciais em pequenas alterações, executando os testes de dados após cada funcionalidade. Use chaves estáveis e upserts para que novas execuções preservem registros não relacionados no MongoDB.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -26,7 +26,7 @@ Mongoose schemas should express the rules the rest of the application can rely o
    > npm run test:data --prefix octofit-tracker/backend
    > ```
 
-1. Load the representative records into the Codespace MongoDB instance and run the command twice to confirm it is idempotent.
+1. Carregue os registros representativos no MongoDB do Codespace e execute o comando duas vezes para confirmar que é idempotente.
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
@@ -35,13 +35,13 @@ Mongoose schemas should express the rules the rest of the application can rely o
    > npm run seed --prefix octofit-tracker/backend
    > ```
 
-1. Review the diff for validation rules and realistic relationships, then commit and push.
+1. Revise as regras de validação e os relacionamentos no diff; depois, faça commit e push.
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Having trouble? 🤷 Precisa de ajuda?</summary><br/>
 
-- Use Mongoose models rather than raw MongoDB scripts.
-- Seed all four capabilities and keep repeated seed runs idempotent.
-- Diagnose the first failing assertion instead of regenerating every model.
+- Use modelos Mongoose em vez de scripts diretos do MongoDB.
+- Crie dados para as quatro funcionalidades e mantenha execuções repetidas idempotentes.
+- Investigue a primeira asserção que falhar, em vez de regenerar todos os modelos.
 
 </details>

@@ -1,34 +1,34 @@
-# OctoFit Tracker architecture
+# Arquitetura do OctoFit Tracker
 
-OctoFit Tracker is a three-tier application for a school fitness program. The starter code includes API contracts and intentionally incomplete implementation points so you can use GitHub Copilot agent mode in a test-driven loop.
+O OctoFit Tracker é uma aplicação de três camadas para um programa de fitness escolar. O código inicial inclui contratos de API e pontos de implementação propositalmente incompletos para que você use o modo Agent do GitHub Copilot em um ciclo orientado por testes.
 
-![Three-tier OctoFit architecture](../.github/images/octofit-architecture.svg)
+![Arquitetura de três camadas do OctoFit](../.github/images/octofit-architecture.svg)
 
-## Tier boundaries
+## Limites das camadas
 
-- **Presentation tier**: React 19, Vite, React Router, Bootstrap, and a shared API client in `octofit-tracker/frontend/src`.
-- **Logic tier**: Express and TypeScript routes/services in `octofit-tracker/backend/src` expose `/api/*` behavior on port `8000`.
-- **Data tier**: Mongoose models and seed data in `octofit-tracker/backend/src/models` and `src/scripts/seed.ts` persist to MongoDB on port `27017`.
+- **Presentation tier — apresentação**: React 19, Vite, React Router, Bootstrap e um cliente de API compartilhado em `octofit-tracker/frontend/src`.
+- **Logic tier — lógica**: rotas e serviços Express e TypeScript em `octofit-tracker/backend/src` expõem `/api/*` na porta `8000`.
+- **Data tier — dados**: modelos Mongoose e dados iniciais em `octofit-tracker/backend/src/models` e `src/scripts/seed.ts` são persistidos no MongoDB na porta `27017`.
 
-## Ports and environment rules
+## Portas e regras do ambiente
 
 - MongoDB: `27017`
-- Express API: `8000`
-- Vite frontend: `5173`
-- The browser calls relative `/api` paths. Vite proxies them to `http://localhost:8000`, so the unauthenticated API port stays private in Codespaces. `VITE_API_BASE_URL` can override the base URL.
+- API Express: `8000`
+- Frontend Vite: `5173`
+- O navegador usa caminhos relativos `/api`. O Vite os encaminha para `http://localhost:8000`, mantendo privada no Codespaces a porta da API sem autenticação. `VITE_API_BASE_URL` pode substituir a URL base.
 
-## API contract
+## Contrato da API
 
-| Capability | Method and path | Expected behavior |
+| Funcionalidade | Método e caminho | Comportamento esperado |
 | --- | --- | --- |
-| Activity tracking | `GET /api/activities`, `POST /api/activities` | List and create valid activity records. POST accepts `userId`, `teamId`, `type`, and `minutes`; `userId` and `teamId` must be well-formed IDs for an existing user and team; otherwise respond with a deliberate 4xx (never a 500 from a cast error). A created activity stores the submitted `user`, `team`, `type`, and `minutes` plus computed `points` and `occurredAt`. |
-| Teams | `GET /api/teams`, `POST /api/teams` | List and create teams with members. Created and listed teams keep the submitted `name` and `mascot`. Reject a team without a name with `400`. |
-| Leaderboard | `GET /api/leaderboard` | Return teams ordered by the sum of their activity points, highest first. Each entry has `teamName`, `totalPoints`, and a 1-based `rank`. |
-| Workout suggestions | `GET /api/workouts/suggestions/:userEmail` | Recommend workouts from recent activity patterns for the matching seeded user's email address. The first suggestion's `focus` matches that user's goal or recent activity, with a `reason` explaining why. An email with no matching user returns a deliberate 4xx (for example, `404`). |
+| Activity tracking — atividades | `GET /api/activities`, `POST /api/activities` | Listar e criar atividades válidas. POST aceita `userId`, `teamId`, `type` e `minutes`; `userId` e `teamId` devem ser IDs bem formados de um usuário e uma equipe existentes; caso contrário, responder com 4xx deliberado, nunca 500 por erro de conversão. A atividade criada armazena `user`, `team`, `type` e `minutes` enviados, além de `points` e `occurredAt` calculados. |
+| Teams — equipes | `GET /api/teams`, `POST /api/teams` | Listar e criar equipes com membros. Equipes criadas e listadas mantêm `name` e `mascot` enviados. Rejeitar equipe sem nome com `400`. |
+| Leaderboard — placar | `GET /api/leaderboard` | Retornar equipes ordenadas pela soma de pontos das atividades, da maior para a menor. Cada entrada tem `teamName`, `totalPoints` e `rank` iniciado em 1. |
+| Workout suggestions — sugestões de treino | `GET /api/workouts/suggestions/:userEmail` | Recomendar treinos a partir das atividades recentes do usuário inicial correspondente ao email. O `focus` da primeira sugestão corresponde ao objetivo ou à atividade recente e `reason` explica o motivo. Um email sem usuário correspondente retorna 4xx deliberado, por exemplo `404`. |
 
-## Implementation decisions
+## Decisões de implementação
 
-Record your plan here before editing code.
+Registre seu plano após cada rótulo antes de editar o código. Preserve os rótulos em inglês, pois são usados na avaliação.
 
 - Presentation tier decision:
 - Logic tier decision:
@@ -38,12 +38,12 @@ Record your plan here before editing code.
 - Leaderboard approach:
 - Workout suggestions approach:
 
-## Test plan
+## Plano de testes
 
-Record the commands you run and what each failure means.
+Registre os comandos executados e o significado de cada falha.
 
-- Data-tier command: `npm run test:data --prefix octofit-tracker/backend`
-- API command: `npm run test:api --prefix octofit-tracker/backend`
-- Frontend command: `npm test --prefix octofit-tracker/frontend`
-- Backend build command: `npm run build --prefix octofit-tracker/backend`
-- Frontend build command: `npm run build --prefix octofit-tracker/frontend`
+- Teste da camada de dados: `npm run test:data --prefix octofit-tracker/backend`
+- Teste da API: `npm run test:api --prefix octofit-tracker/backend`
+- Teste do frontend: `npm test --prefix octofit-tracker/frontend`
+- Build do backend: `npm run build --prefix octofit-tracker/backend`
+- Build do frontend: `npm run build --prefix octofit-tracker/frontend`
