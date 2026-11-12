@@ -49,6 +49,18 @@ test('diagram architecture is Mermaid and image assets are absent', () => {
   assert.throws(() => validateExercise(root), /Architecture diagram must use a Mermaid flowchart/);
 });
 
+test('copy link points to this template and review images use the template asset', () => {
+  const wrongOwner = copyAll();
+  const readme = path.join(wrongOwner, 'README.md');
+  fs.writeFileSync(readme, fs.readFileSync(readme, 'utf8').replace('template_owner=dev-pods', 'template_owner=skills'));
+  assert.throws(() => validateExercise(wrongOwner), /Copy Exercise badge must point to the dev-pods exercise template/);
+
+  const wrongImage = copyAll();
+  const review = path.join(wrongImage, '.github/steps/x-review.md');
+  fs.writeFileSync(review, fs.readFileSync(review, 'utf8').replace('https://octodex.github.com/images/jetpacktocat.png', 'https://example.com/custom.png'));
+  assert.throws(() => validateExercise(wrongImage), /Review images must come from the exercise-template/);
+});
+
 test('starter scaffold does not pass learner grading before implementation', () => {
   for (const name of ['step1-architecture', 'step2-data', 'step3-api', 'step4-frontend']) {
     assert.throws(() => checks[name](repositoryRoot));

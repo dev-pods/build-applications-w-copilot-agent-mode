@@ -159,7 +159,7 @@ export function validateExercise(root = process.cwd()) {
     }],
     ['README contract', () => {
       const readme = readText(root, 'README.md');
-      assertValid(/template_owner=skills&template_name=build-applications-w-copilot-agent-mode/.test(readme), 'Copy Exercise badge has the wrong template owner or name');
+      assertValid(/template_owner=dev-pods&template_name=build-applications-w-copilot-agent-mode/.test(readme), 'Copy Exercise badge must point to the dev-pods exercise template');
       assertValid(/## Boas-vindas/.test(readme) && /Está com dificuldades\? 🤷/.test(readme), 'README must include welcome and troubleshooting sections');
       assertValid(!/\.github\/images\/|<img\b/i.test(readme), 'README must not reference image assets');
     }],
@@ -167,6 +167,11 @@ export function validateExercise(root = process.cwd()) {
       const architecture = readText(root, 'docs/architecture.md');
       assertValid(/```mermaid\s*\nflowchart\b/.test(architecture), 'Architecture diagram must use a Mermaid flowchart');
       assertValid(!/!\[[^\]]*\]\([^)]+\)/.test(architecture), 'Architecture diagram must not be an image');
+    }],
+    ['Template image usage', () => {
+      const review = readText(root, '.github/steps/x-review.md');
+      const imageSources = [...review.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi)].map((match) => match[1]);
+      assertValid(imageSources.every((source) => source === 'https://octodex.github.com/images/jetpacktocat.png'), 'Review images must come from the exercise-template');
     }],
     ['Step content structure', () => {
       for (const n of requiredSteps) {

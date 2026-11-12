@@ -26,7 +26,7 @@ Neste exercício, você vai:
 
 Copie o exercício para sua conta, aguarde cerca de **20 segundos** para que a Mona prepare a primeira lição e atualize a página.
 
-[![Copiar exercício](https://img.shields.io/badge/Copiar%20exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=skills-build-applications-w-copilot-agent-mode&description=Exercicio:+Construa+e+teste+uma+aplicacao+multicamadas+com+o+GitHub+Copilot&visibility=public)
+[![Copiar exercício](https://img.shields.io/badge/Copiar%20exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=dev-pods&template_name=build-applications-w-copilot-agent-mode&owner=%40me&name=build-applications-w-copilot-agent-mode&description=Exercicio:+Construa+e+teste+uma+aplicacao+multicamadas+com+o+GitHub+Copilot&visibility=public)
 
 <details>
 <summary>Está com dificuldades? 🤷</summary><br/>
