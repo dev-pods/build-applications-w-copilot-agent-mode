@@ -2,8 +2,6 @@
 
 _Use o modo agent do GitHub Copilot para implementar, testar e revisar uma aplicação React + Express + MongoDB com base em contratos executáveis._
 
-<img src=".github/images/octofit-tracker-pt-br.svg" alt="Banner do GitHub Skills para construir e testar uma aplicação multicamadas com o GitHub Copilot" width="720"/>
-
 ## Boas-vindas
 
 - **Para quem é**: pessoas desenvolvedoras familiarizadas com GitHub, VS Code, JavaScript/TypeScript e fluxos básicos do GitHub Copilot.

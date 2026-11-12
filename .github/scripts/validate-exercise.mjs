@@ -149,8 +149,7 @@ export function validateExercise(root = process.cwd()) {
       for (const n of requiredSteps) assertValid(fs.existsSync(path.join(root, `.github/steps/${n}-step.md`)), `Missing .github/steps/${n}-step.md`);
       assertValid(fs.existsSync(path.join(root, '.github/steps/x-review.md')), 'Missing .github/steps/x-review.md');
       assertValid(fs.existsSync(path.join(root, '.github/workflows/0-start-exercise.yml')), 'Missing start workflow');
-      assertValid(fs.existsSync(path.join(root, '.github/images/octofit-tracker-pt-br.svg')), 'Missing Portuguese hero image');
-      assertValid(fs.existsSync(path.join(root, '.github/images/octofit-architecture.svg')), 'Missing architecture diagram');
+      assertValid(!fs.existsSync(path.join(root, '.github/images')), 'Remove image assets from .github/images');
       for (const n of [1,2,3,4]) assertValid(fs.existsSync(path.join(root, `.github/workflows/${n}-step.yml`)), `Missing .github/workflows/${n}-step.yml`);
       assertValid(fs.existsSync(path.join(root, '.github/workflows/5-last-step.yml')), 'Missing final workflow');
       assertValid(!fs.existsSync(path.join(root, '.github/step-feedback')), 'Local duplicated step-feedback templates must be removed');
@@ -162,7 +161,12 @@ export function validateExercise(root = process.cwd()) {
       const readme = readText(root, 'README.md');
       assertValid(/template_owner=skills&template_name=build-applications-w-copilot-agent-mode/.test(readme), 'Copy Exercise badge has the wrong template owner or name');
       assertValid(/## Boas-vindas/.test(readme) && /Está com dificuldades\? 🤷/.test(readme), 'README must include welcome and troubleshooting sections');
-      assertValid(/\.github\/images\/octofit-tracker-pt-br\.svg/.test(readme), 'README must reference the Portuguese hero image');
+      assertValid(!/\.github\/images\/|<img\b/i.test(readme), 'README must not reference image assets');
+    }],
+    ['Architecture diagram', () => {
+      const architecture = readText(root, 'docs/architecture.md');
+      assertValid(/```mermaid\s*\nflowchart\b/.test(architecture), 'Architecture diagram must use a Mermaid flowchart');
+      assertValid(!/!\[[^\]]*\]\([^)]+\)/.test(architecture), 'Architecture diagram must not be an image');
     }],
     ['Step content structure', () => {
       for (const n of requiredSteps) {
